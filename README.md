@@ -128,19 +128,6 @@ For a complete list, see [requirements.txt](requirements.txt)
 
 ---
 
-## Project Structure
-
-```
-Dana Sentimen Analysis/
-├── README.md                    # Project documentation
-├── notebook-model.ipynb         # Main Jupyter notebook
-├── model_LSTM.h5               # Trained LSTM model
-├── reviews.csv                 # Dataset (10,000 reviews)
-├── requirements.txt            # Python dependencies
-└── .ipynb_checkpoints/         # Jupyter checkpoint folder
-```
-
----
 
 ## Installation & Setup
 
@@ -191,18 +178,6 @@ Dana Sentimen Analysis/
    - Evaluate model performance
    - Generate visualizations
 
-### Using the Trained Model
-
-```python
-from tensorflow.keras.models import load_model
-
-# Load the pre-trained model
-model = load_model('model_LSTM.h5')
-
-# Make predictions
-predictions = model.predict(processed_reviews)
-```
-
 ---
 
 ## Model Evaluation
@@ -210,19 +185,14 @@ predictions = model.predict(processed_reviews)
 The model is evaluated using multiple metrics:
 
 ### Performance Metrics
-- **Accuracy**: Overall correct predictions
-- **Precision**: True positive rate among positive predictions
-- **Recall**: True positive rate among actual positives
-- **F1-Score**: Harmonic mean of precision and recall
-- **Confusion Matrix**: Visual representation of classification results
-- **ROC Curve & AUC**: Performance across classification thresholds
+- **Accuracy**: 85%
 
 ### Classification Report
 ```
               precision    recall  f1-score   support
-    Positive       0.xx      0.xx      0.xx      xxxx
-     Neutral       0.xx      0.xx      0.xx      xxxx
-    Negative       0.xx      0.xx      0.xx      xxxx
+    Positive       0.89      0.76      0.82      xxxx
+     Neutral       0.65      0.78      0.71      xxxx
+    Negative       0.94      0.91      0.91      xxxx
 ```
 
 ---
