@@ -128,58 +128,6 @@ For a complete list, see [requirements.txt](requirements.txt)
 
 ---
 
-
-## Installation & Setup
-
-### Prerequisites
-- Python 3.7 or higher
-- Jupyter Notebook or JupyterLab
-
-### Installation Steps
-
-1. **Clone or download the project**
-   ```bash
-   cd "Dana Sentimen Analysis"
-   ```
-
-2. **Create a virtual environment (optional but recommended)**
-   ```bash
-   python -m venv venv
-   venv\Scripts\activate  # On Windows
-   ```
-
-3. **Install required packages**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Download NLTK data** (required for text processing)
-   ```python
-   python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"
-   ```
-
----
-
-## Usage
-
-### Running the Notebook
-
-1. **Start Jupyter Notebook**
-   ```bash
-   jupyter notebook
-   ```
-
-2. **Open `notebook-model.ipynb`** in the browser
-
-3. **Execute cells sequentially** to:
-   - Load and explore the dataset
-   - Perform text preprocessing
-   - Train the LSTM model
-   - Evaluate model performance
-   - Generate visualizations
-
----
-
 ## Model Evaluation
 
 The model is evaluated using multiple metrics:
@@ -189,13 +137,15 @@ The model is evaluated using multiple metrics:
 
 ### Classification Report
 ```
-              precision    recall  f1-score   support
-    Positive       0.89      0.76      0.82      xxxx
-     Neutral       0.65      0.78      0.71      xxxx
-    Negative       0.94      0.91      0.91      xxxx
+              precision    recall  f1-score  
+    Positive       0.89      0.76      0.82      
+     Neutral       0.65      0.78      0.71      
+    Negative       0.94      0.91      0.91      
+
 ```
 
----
+### Confusion Matrix
+<img width="529" height="413" alt="image" src="https://github.com/user-attachments/assets/db9d11a5-adb2-4117-bcfd-043610569e82" />
 
 ## Key Findings & Insights
 
@@ -204,52 +154,3 @@ The model is evaluated using multiple metrics:
 - LSTM architecture captures sentiment patterns in review sequences
 - Model demonstrates strong performance in distinguishing positive, neutral, and negative reviews
 - Identifies common complaints and praise points from user feedback
-
----
-
-## Future Enhancements
-
-1. **Model Improvements**
-   - Experiment with bidirectional LSTM (BiLSTM)
-   - Implement attention mechanisms
-   - Test ensemble methods (combining multiple models)
-
-2. **Feature Expansion**
-   - Incorporate aspect-based sentiment analysis
-   - Analyze temporal trends in sentiments
-   - Multi-label sentiment classification
-
-3. **Deployment**
-   - Create REST API for real-time predictions
-   - Build web interface for sentiment analysis
-   - Integrate with production systems
-
-4. **Data Enhancement**
-   - Expand dataset to more recent reviews
-   - Include reviews from other platforms
-   - Add more languages support
-
----
-
-## Contributors & References
-
-- **Data Source**: Google Play Store Reviews API
-- **Text Processing**: NLTK and Sastrawi libraries
-- **Model Framework**: TensorFlow/Keras
-- **Project Date**: 2026
-
----
-
-## License
-
-This project is for educational and research purposes.
-
----
-
-## Contact & Support
-
-For questions or issues regarding this project, please refer to the notebook documentation or contact the project maintainer.
-
----
-
-**Last Updated**: February 2026
