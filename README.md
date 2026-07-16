@@ -16,31 +16,6 @@ This project focuses on classifying sentiments of user reviews from Google Play 
   - **Neutral**: Balanced opinions or factual statements
   - **Negative**: Dissatisfied users expressing complaints
 
-### Dataset Features
-
-| Column | Description |
-|--------|-------------|
-| `reviewId` | Unique identifier for each review |
-| `userName` | Name of the reviewer |
-| `userImage` | Profile image URL of the reviewer |
-| `content` | The review text content |
-| `score` | Star rating (1-5) given by user |
-| `thumbsUpCount` | Number of helpful votes |
-| `reviewCreatedVersion` | App version when review was posted |
-| `at` | Timestamp of the review |
-| `replyContent` | Developer's reply to the review (if available) |
-| `repliedAt` | Timestamp of developer's reply |
-| `appVersion` | Current app version |
-
----
-
-## Project Objectives
-
-1. **Sentiment Classification**: Classify user reviews into positive, neutral, and negative sentiments
-2. **Text Understanding**: Extract meaningful patterns from Indonesian language reviews
-3. **Model Performance**: Achieve high accuracy in sentiment prediction
-4. **Deployment**: Provide a trained model for real-time sentiment analysis
-
 ---
 
 ## Text Preprocessing Pipeline
@@ -78,74 +53,30 @@ The project implements a comprehensive text preprocessing pipeline with the foll
 
 ---
 
-## Model Architecture
-
-### LSTM Neural Network
-
-The project uses a **Long Short-Term Memory (LSTM)** deep learning model suitable for sequence analysis:
-
-```
-Input Layer
-    ↓
-Embedding Layer (word embeddings)
-    ↓
-LSTM Layer (128 units) [captures sequential patterns]
-    ↓
-Dropout Layer (0.5) [regularization to prevent overfitting]
-    ↓
-Dense Layer (64 units, ReLU activation)
-    ↓
-Dropout Layer (0.5)
-    ↓
-Output Dense Layer (3 units, Softmax) [sentiment classification]
-```
-
-### Key Components
-
-- **Embedding Layer**: Converts text tokens to dense vectors
-- **LSTM Units**: Captures long-term dependencies in text sequences
-- **Dropout Regularization**: Prevents overfitting with L2 regularization
-- **Softmax Output**: Produces probability distribution across 3 sentiment classes
-
----
-
-## Technologies & Libraries
-
-### Core Dependencies
-
-| Library | Purpose |
-|---------|---------|
-| `TensorFlow/Keras` | Deep learning framework for model building |
-| `NLTK` | Natural Language Toolkit for text processing |
-| `Sastrawi` | Indonesian stemmer for text normalization |
-| `Scikit-learn` | Machine learning utilities (preprocessing, metrics) |
-| `Pandas` | Data manipulation and analysis |
-| `NumPy` | Numerical computing |
-| `Matplotlib/Seaborn` | Data visualization |
-| `google-play-scraper` | Scraping reviews from Google Play Store |
-
-For a complete list, see [requirements.txt](requirements.txt)
-
----
-
 ## Model Evaluation
 
 The model is evaluated using multiple metrics:
 
 ### Performance Metrics
-- **Accuracy**: 85%
+- **Accuracy**: 84%
 
 ### Classification Report
 ```
-              precision    recall  f1-score  
-    Positive       0.89      0.76      0.82      
-     Neutral       0.65      0.78      0.71      
-    Negative       0.94      0.91      0.91      
+           precision    recall  f1-score   support
+
+    negative       0.85      0.79      0.82       363
+     neutral       0.66      0.76      0.71       513
+    positive       0.93      0.88      0.90      1124
+
+    accuracy                           0.84      2000
+   macro avg       0.81      0.81      0.81      2000
+weighted avg       0.84      0.84      0.84      2000  
 
 ```
 
 ### Confusion Matrix
-<img width="529" height="413" alt="image" src="https://github.com/user-attachments/assets/db9d11a5-adb2-4117-bcfd-043610569e82" />
+<img width="650" height="547" alt="image" src="https://github.com/user-attachments/assets/65b03f7f-975e-4074-bcfc-43d682bf98c2" />
+
 
 ## Key Findings & Insights
 
